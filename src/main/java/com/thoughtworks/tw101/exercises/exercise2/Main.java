@@ -4,10 +4,13 @@ package com.thoughtworks.tw101.exercises.exercise2;
 // when you call total(). Create a main method that calls increment() 5 times and then calls total().
 
 public class Main {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
-        Accumulator accumulator = new Accumulator();
+      Accumulator accumulator = new Accumulator();
 
-
+      for(int i = 0; i < 5; i++){
+         accumulator.increment();
+      }
+      accumulator.total();
     }
 }
