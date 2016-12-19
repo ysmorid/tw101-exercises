@@ -15,5 +15,13 @@ public class Main {
                 new Orc(),
                 new Troll()
         };
+
+        for (int i = 0; i < monsters.length; i++){
+            monsters[i].takeDamage(10);
+        }
+
+        for (int i = 0; i < monsters.length; i++){
+            monsters[i].reportStatus();
+        }
     }
 }
