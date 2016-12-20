@@ -7,6 +7,7 @@ public class Input {
     private Scanner keyboard = new Scanner(System.in);
 
     public void getInput(){
+        System.out.println("Please guess a number between 1 - 100: ");
         userInput = keyboard.nextLine();
     }
 
