@@ -8,5 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Input guess = new Input();
+
+        System.out.println("Please guess a number between 1 - 100: ");
+        guess.getInput();
+
     }
 }
