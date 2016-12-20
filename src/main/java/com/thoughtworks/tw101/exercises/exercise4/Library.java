@@ -1,7 +1,8 @@
 package com.thoughtworks.tw101.exercises.exercise4;
 
 import java.io.PrintStream;
-import java.lang.*;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 public class Library {
     private String[] books;
@@ -16,7 +17,7 @@ public class Library {
         printStream.println("Searching database for books containing the word '" + partialBookTitle + "' in title.");
         printStream.println("Search Results:");
         for(int i = 0; i <books.length; i++){
-            boolean match = books[i].contains(partialBookTitle);
+            boolean match = containsIgnoreCase(books[i], partialBookTitle);
             if(match){
                 printStream.println(books[i]);
             }
