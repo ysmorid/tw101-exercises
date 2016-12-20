@@ -17,6 +17,6 @@ public class Main {
         library.printBooksContaining("Potter");
         library.printBooksContaining("Sorcerer");
         library.printBooksContaining("Intro");
-        library.printBooksContaining("Stone");
+        library.printBooksContaining("THE");
     }
 }
