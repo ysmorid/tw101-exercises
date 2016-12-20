@@ -7,16 +7,9 @@ package com.thoughtworks.tw101.exercises.exercise7;
 public class Main {
 
     public static void main(String[] args) {
+        Result results = new Result();
 
-        Input guess = new Input();
-        Randomizer randomNumber = new Randomizer();
-
-        //System.out.println("Please guess a number between 1 - 100: ");
-        //guess.getInput();
-        //guess.display();
-
-        randomNumber.displayRandomNumber();
-
+        results.guessUntilCorrect();
 
     }
 }
