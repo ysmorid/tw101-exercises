@@ -14,10 +14,15 @@ public class Main {
         Guesses guess = new Guesses();
 
         try {
-            results.guessUntilCorrect();
+            do {
+                user.getInput();
+                results.isWithinRange();
+                results.checkGuess();
+            }
+            while (user.stringToInteger() != number);
         }
         catch (NumberFormatException e) {
-            System.out.println("I'm sorry, that is an invalid number format.");
+            System.out.println("I'm sorry, that is an invalid number format. ");
         }
     }
 }
