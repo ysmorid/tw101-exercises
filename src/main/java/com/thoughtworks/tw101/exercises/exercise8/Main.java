@@ -13,18 +13,23 @@ public class Main {
         Results results = new Results(user, number);
         Guesses guess = new Guesses();
 
-        try {
-            do {
-                user.getInput();
-                results.isWithinRange();
+        do {
+                checkInputIsValid(user, results);
                 guess.addGuess(user.stringToInteger());
                 results.checkGuess();
             }
             while (user.stringToInteger() != number);
             guess.displayGuesses();
+    }
+
+    public static void checkInputIsValid(UserInput data, Results result){
+        try{
+            data.getInput();
+            result.isWithinRange();
         }
         catch (NumberFormatException e) {
-            System.out.println("I'm sorry, that is an invalid number format. ");
-        }
+                System.out.println("I'm sorry, that is an invalid number format. Please try again using digits only.");
+                checkInputIsValid(data, result);
+            }
     }
 }
