@@ -5,7 +5,11 @@ package com.thoughtworks.tw101.exercises.exercise8;
 // where the user entered a String that is not parseable.
 
 public class Main {
+
     public static void main(String[] args) {
+        Results results = new Results();
+
+        results.guessUntilCorrect();
 
     }
 }
