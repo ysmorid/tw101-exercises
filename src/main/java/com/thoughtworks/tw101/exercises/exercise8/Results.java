@@ -26,13 +26,4 @@ public class Results {
         else
             System.out.println("You guessed correctly! Congratulations!!");
     }
-
-    public void guessUntilCorrect() {
-        do {
-            input.getInput();
-            isWithinRange();
-            checkGuess();
-        }
-        while (input.stringToInteger() != randomNumber);
-    }
 }

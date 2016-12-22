@@ -17,9 +17,11 @@ public class Main {
             do {
                 user.getInput();
                 results.isWithinRange();
+                guess.addGuess(user.stringToInteger());
                 results.checkGuess();
             }
             while (user.stringToInteger() != number);
+            guess.displayGuesses();
         }
         catch (NumberFormatException e) {
             System.out.println("I'm sorry, that is an invalid number format. ");
