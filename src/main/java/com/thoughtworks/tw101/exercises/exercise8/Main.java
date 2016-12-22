@@ -7,9 +7,17 @@ package com.thoughtworks.tw101.exercises.exercise8;
 public class Main {
 
     public static void main(String[] args) {
-        Results results = new Results();
+        RandomNumber random = new RandomNumber();
+        int number = random.generateRandomNumber();
+        UserInput user = new UserInput();
+        Results results = new Results(user, number);
+        Guesses guess = new Guesses();
 
-        results.guessUntilCorrect();
-
+        try {
+            results.guessUntilCorrect();
+        }
+        catch (NumberFormatException e) {
+            System.out.println("I'm sorry, that is an invalid number format.");
+        }
     }
 }
