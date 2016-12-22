@@ -9,7 +9,6 @@ public class RandomNumber {
     private final int max = 100;
 
     public int generateRandomNumber(){
-
         return random.nextInt((max-min) + 1) + min;
     }
 }

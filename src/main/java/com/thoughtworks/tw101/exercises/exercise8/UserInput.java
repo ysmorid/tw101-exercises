@@ -11,9 +11,8 @@ public class UserInput {
         userInput = keyboard.nextLine();
     }
 
-    public int StringToInteger(){
-        int stringToInt = Integer.parseInt(userInput);
-        return stringToInt;
+    public int stringToInteger(){
+        return Integer.parseInt(userInput);
     }
 
     public void display(){

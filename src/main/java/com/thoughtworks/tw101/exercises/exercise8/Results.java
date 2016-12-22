@@ -1,26 +1,26 @@
 package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Results {
-    private UserInput input = new UserInput();
-    private RandomNumber random = new RandomNumber();
-    private int randomNumber = 0;
+    private UserInput input;
+    private int randomNumber;
 
-    public Results(){
-        randomNumber = random.generateRandomNumber();
+    public Results(UserInput input, int randomNumber) {
+        this.input = input;
+        this.randomNumber = randomNumber;
     }
 
-    public void isWithinRange(){
-        while(input.StringToInteger() < 1 || input.StringToInteger() > 100){
+    public void isWithinRange() {
+        while (input.stringToInteger() < 1 || input.stringToInteger() > 100) {
             System.out.println("I'm sorry, that is an invalid number.  Please try again. ");
             input.getInput();
         }
     }
 
     public void checkGuess(){
-        if(input.StringToInteger() > randomNumber){
+        if(input.stringToInteger() > randomNumber){
             System.out.println("I'm sorry.  Your guess is too high.  Guess again!");
         }
-        else if(input.StringToInteger() < randomNumber){
+        else if(input.stringToInteger() < randomNumber){
             System.out.println("I'm sorry.  Your guess is too low.  Guess again!");
         }
         else
@@ -33,6 +33,6 @@ public class Results {
             isWithinRange();
             checkGuess();
         }
-        while (input.StringToInteger() != randomNumber);
+        while (input.stringToInteger() != randomNumber);
     }
 }
