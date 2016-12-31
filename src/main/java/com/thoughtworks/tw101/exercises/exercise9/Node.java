@@ -10,45 +10,37 @@ import java.util.List;
 
 public class Node {
     private String name;
-    private Node parent;
     private Node leftChild;
     private Node rightChild;
-    private List<String> alphabeticalNames = new ArrayList<>();
+    private List<String> listOfNames = new ArrayList<>();
 
     public Node(String name) {
         this.name = name;
+        leftChild = null;
+        rightChild = null;
+    }
+
+    public void newNode(Node root, String nodeName){
+        if (root == null) {
+            root = new Node(nodeName);
+            listOfNames.add(root.name());
+        }
+        else if (nodeName.compareTo(root.name()) < 0){
+            newNode(leftChild, nodeName);
+        }
+        else if (nodeName.compareTo(root.name()) > 0){
+            newNode(rightChild, nodeName);
+        }
     }
 
     public void add(String nameOfNewNode) {
-        if (parent == null) {
-            parent = new Node(nameOfNewNode);
-            alphabeticalNames.add(parent.name());
-        }
-        else if (nameOfNewNode.compareTo(parent.name()) < 0){
-            if (leftChild == null) {
-                leftChild = new Node(nameOfNewNode);
-                alphabeticalNames.add(leftChild.name());
-            }
-            else{
-                parent = leftChild;
-                parent.add(nameOfNewNode);
-            }
-        }
-        else if (nameOfNewNode.compareTo(parent.name()) > 0){
-            if (rightChild == null) {
-                rightChild = new Node(nameOfNewNode);
-                alphabeticalNames.add(rightChild.name());
-            }
-            else{
-                parent = rightChild;
-                parent.add(nameOfNewNode);
-            }
-        }
+        newNode(this, nameOfNewNode);
+
     }
 
     public List<String> names(){
 
-        return alphabeticalNames;
+        return listOfNames;
     }
 
     public String name(){
