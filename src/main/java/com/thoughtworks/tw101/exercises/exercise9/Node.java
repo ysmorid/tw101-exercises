@@ -23,7 +23,6 @@ public class Node {
     public void newNode(Node root, String nodeName){
         if (root == null) {
             root = new Node(nodeName);
-            listOfNames.add(root.name());
         }
         else if (nodeName.compareTo(root.name()) < 0){
             newNode(leftChild, nodeName);
@@ -38,8 +37,16 @@ public class Node {
 
     }
 
-    public List<String> names(){
+    public void inOrderTraverse(Node root){
+        if (root != null){
+            inOrderTraverse(root.leftChild);
+            listOfNames.add(root.name());
+            inOrderTraverse(root.rightChild);
+        }
+    }
 
+    public List<String> names(){
+        inOrderTraverse(this);
         return listOfNames;
     }
 
