@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Node {
     private String name;
+    private Node root;
     private Node parent;
     private Node leftChild;
     private Node rightChild;
@@ -19,12 +20,17 @@ public class Node {
         this.name = name;
     }
 
-    public void add(String nameOfNewNode) {
-        if (parent == null) {
-            parent = new Node(nameOfNewNode);
-            alphabeticalNames.add(parent.name());
+    public void assignRoot(){
+        if (root == null) {
+            root = new Node(name);
+            parent = root;
+            alphabeticalNames.add(root.name());
         }
-        else if (nameOfNewNode.compareTo(parent.name()) < 0){
+    }
+
+    public void add(String nameOfNewNode) {
+        assignRoot();
+        if (nameOfNewNode.compareTo(parent.name()) < 0){
             if (leftChild == null) {
                 leftChild = new Node(nameOfNewNode);
                 alphabeticalNames.add(leftChild.name());
@@ -44,6 +50,7 @@ public class Node {
                 parent.add(nameOfNewNode);
             }
         }
+        parent = root;
     }
 
     public List<String> names(){
