@@ -25,10 +25,10 @@ public class Node {
             root = new Node(nodeName);
         }
         else if (nodeName.compareTo(root.name()) < 0){
-            newNode(leftChild, nodeName);
+            root.leftChild = newNode(root.leftChild, nodeName);
         }
         else if (nodeName.compareTo(root.name()) > 0){
-            newNode(rightChild, nodeName);
+            root.rightChild = newNode(root.rightChild, nodeName);
         }
         return root;
     }
