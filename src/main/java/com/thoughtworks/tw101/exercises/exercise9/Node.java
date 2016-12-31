@@ -20,7 +20,7 @@ public class Node {
         rightChild = null;
     }
 
-    public void newNode(Node root, String nodeName){
+    public Node newNode(Node root, String nodeName){
         if (root == null) {
             root = new Node(nodeName);
         }
@@ -30,6 +30,7 @@ public class Node {
         else if (nodeName.compareTo(root.name()) > 0){
             newNode(rightChild, nodeName);
         }
+        return root;
     }
 
     public void add(String nameOfNewNode) {
@@ -46,7 +47,7 @@ public class Node {
     }
 
     public List<String> names(){
-        inOrderTraverse(this);
+        inOrderTraverse(newNode(this,name()));
         return listOfNames;
     }
 
