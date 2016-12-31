@@ -1,5 +1,6 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Exercise #9: Create a class Node that implements a binary tree for Strings. It should have an add(String name) method
@@ -12,6 +13,7 @@ public class Node {
     private Node parent;
     private Node leftChild;
     private Node rightChild;
+    private List<String> alphabeticalNames = new ArrayList<>();
 
     public Node(String name) {
         this.name = name;
@@ -20,10 +22,12 @@ public class Node {
     public void add(String nameOfNewNode) {
         if (parent == null) {
             parent = new Node(nameOfNewNode);
+            alphabeticalNames.add(parent.name());
         }
         else if (nameOfNewNode.compareTo(parent.name()) < 0){
             if (leftChild == null) {
                 leftChild = new Node(nameOfNewNode);
+                alphabeticalNames.add(leftChild.name());
             }
             else{
                 parent = leftChild;
@@ -33,6 +37,7 @@ public class Node {
         else if (nameOfNewNode.compareTo(parent.name()) > 0){
             if (rightChild == null) {
                 rightChild = new Node(nameOfNewNode);
+                alphabeticalNames.add(rightChild.name());
             }
             else{
                 parent = rightChild;
@@ -42,7 +47,8 @@ public class Node {
     }
 
     public List<String> names(){
-        return null;
+
+        return alphabeticalNames;
     }
 
     public String name(){
