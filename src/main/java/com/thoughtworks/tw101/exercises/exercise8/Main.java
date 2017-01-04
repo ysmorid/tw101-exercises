@@ -16,7 +16,7 @@ public class Main {
         do {
                 results.checkInputIsValid();
                 guess.addGuess(user.stringToInteger());
-                results.checkGuess();
+                results.checkGuess(user.stringToInteger());
             }
             while (user.stringToInteger() != number);
             guess.displayGuesses();
