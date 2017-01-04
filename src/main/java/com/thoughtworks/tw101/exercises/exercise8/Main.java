@@ -14,22 +14,11 @@ public class Main {
         Guesses guess = new Guesses();
 
         do {
-                checkInputIsValid(user, results);
+                results.checkInputIsValid();
                 guess.addGuess(user.stringToInteger());
                 results.checkGuess();
             }
             while (user.stringToInteger() != number);
             guess.displayGuesses();
-    }
-
-    public static void checkInputIsValid(UserInput data, Results result){
-        try{
-            data.getInput();
-            result.isWithinRange();
-        }
-        catch (NumberFormatException e) {
-                System.out.println("I'm sorry, that is an invalid number format. Please try again using digits only.");
-                checkInputIsValid(data, result);
-            }
     }
 }

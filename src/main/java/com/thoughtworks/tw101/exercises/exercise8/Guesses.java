@@ -10,7 +10,7 @@ public class Guesses {
     }
     
     public void displayGuesses(){
-        System.out.println("Here are all of your guesses: ");
+        System.out.println("Here are all of your valid guesses: ");
         for (int guess : guesses) {
             System.out.print(guess + ", ");
         }
