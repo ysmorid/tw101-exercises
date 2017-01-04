@@ -14,9 +14,4 @@ public class UserInput {
     public int stringToInteger(){
         return Integer.parseInt(userInput);
     }
-
-    public void display(){
-
-        System.out.println(userInput);
-    }
 }
